@@ -1,3 +1,8 @@
+// Author: Harry Dean 
+// Date: 24/11/21
+// version 1.0 
+// function purpose: to order an input array in ascending order (small to big). 
+
 #include <stdio.h> /*printf(), scanf() */
 #include <string.h> /*strlen()*/
 #include <stdlib.h> /*malloc(), free()*/
