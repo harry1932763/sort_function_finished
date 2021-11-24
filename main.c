@@ -51,16 +51,16 @@ const char * sort(char input_sentence[]){
   // copy input_sentence to input_sentnece_cpy as we can't manipulate input_sentence but we can manipulate a copy of it. 
   strcpy(input_sentence_cpy, input_sentence);
   // swap letter indexes if the next index is smaller so 4321 -> 1234
-  for (int i = 0; i < length; i++){
-    for (int j = i+1; j < length; j++){
+  for (int current = 0; current < length; current++){
+    for (int next = current+1; next < length; next++){
       // check to see if the current char is bigger than the next one if its bigger it gets swapped and moved to the right. 
-      if (input_sentence_cpy[i] > input_sentence_cpy[j]){
-          // place holder for the current letter 
-          temp = input_sentence_cpy[i];
-          // make the current index equal to the next index, so now the current and next index are both equal to input_sentence_cpy[]
-          input_sentence_cpy[i] = input_sentence_cpy[j];
-          // the next index is then changed to the current letter which was stored in temp which completes the switch
-          input_sentence_cpy[j] = temp;
+      if (input_sentence_cpy[current] > input_sentence_cpy[next]){
+          // place holder for the current letter  [current]->temp
+          temp = input_sentence_cpy[current];
+          // make the current index equal to the next index, so now the current and next index are both equal to input_sentence_cpy[] -> [current] [next] -> [current] [next] -> [next] [next]
+          input_sentence_cpy[current] = input_sentence_cpy[next];
+          // the next index is then changed to the current letter which was stored in temp which completes the switch -> [j] [j] -> [next] [current] 
+          input_sentence_cpy[next] = temp;
       }
     }
   }
